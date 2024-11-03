@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Telemetry</title>
+</head>
+<body>
+    <h1>Telemetry Data</h1>
+    <ul>
+        {% for telemetry in telemetry_data %}
+           <li> {{ telemetry.timestamp }} - speed: {{ telemetry.speed }}km/h </li>
+        
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

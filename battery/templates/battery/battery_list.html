@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Battery Data</title>
+</head>
+<body>
+    <h1>Battery List</h1>
+    <ul>
+        {% for battery in batteries %}
+            <li>{{ battery.vehicle.model_name }} - Health: {{ battery.health_percentage }}%</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
