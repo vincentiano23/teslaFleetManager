@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
 
-    <title>Telemetry</title>
-</head>
-<body>
-    <h1>Telemetry Data</h1>
-    <ul>
+{% block title %}Telemetry Data - Tesla Fleet Manager{% endblock %}
+
+{% block content %}
+<h2>Telemetry Data</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Speed (km/h)</th>
+            <th>Location</th>
+            <th>Efficiency (km/kWh)</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for telemetry in telemetry_data %}
-           <li> {{ telemetry.timestamp }} - speed: {{ telemetry.speed }}km/h </li>
-        
+            <tr>
+                <td>{{ telemetry.timestamp }}</td>
+                <td>{{ telemetry.speed }}</td>
+                <td>{{ telemetry.location }}</td>
+                <td>{{ telemetry.efficiency }}</td>
+            </tr>
         {% endfor %}
-    </ul>
-    
-</body>
-</html>
+    </tbody>
+</table>
+{% endblock %}

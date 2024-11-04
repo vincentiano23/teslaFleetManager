@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Battery Data</title>
-</head>
-<body>
-    <h1>Battery List</h1>
-    <ul>
+{% extends "base.html" %}
+
+{% block title %}Battery Data - Tesla Fleet Manager{% endblock %}
+
+{% block content %}
+<h2>Battery List</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Vehicle Model</th>
+            <th>Charge Cycles</th>
+            <th>Health (%)</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for battery in batteries %}
-            <li>{{ battery.vehicle.model_name }} - Health: {{ battery.health_percentage }}%</li>
+            <tr>
+                <td>{{ battery.vehicle.model_name }}</td>
+                <td>{{ battery.charge_cycles }}</td>
+                <td>{{ battery.health_percentage }}</td>
+            </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+{% endblock %}

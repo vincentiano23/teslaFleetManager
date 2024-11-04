@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>Vehicles</title>
-</head>
-<body>
-    <h1>vehicle list</h1>
-    <ul>
-      {% for vehicle in vehicles %}
-        <li>{{ vehicle.model_name }} - {{ vehicle.year }}</li>
+{% extends "base.html" %}
 
+{% block title %}Vehicle List - Tesla Fleet Manager{% endblock %}
+
+{% block content %}
+<h2>Vehicle List</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Battery Capacity (kWh)</th>
+            <th>Max Range (km)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle.model_name }}</td>
+                <td>{{ vehicle.year }}</td>
+                <td>{{ vehicle.battery_capacity }}</td>
+                <td>{{ vehicle.max_range }}</td>
+            </tr>
         {% endfor %}
-
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+{% endblock %}

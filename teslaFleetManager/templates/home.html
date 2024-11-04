@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Tesla Fleet Manager{% endblock %}
+
+{% block content %}
+<div class='text-center'> 
+    <h1>Welcome to tesla fleet Manager </h1>
+    <p> Your go-to solutions for managing Tesa electric vehicle data.</p>
+    <a href=' {% url "vehicle_list" %}' class='btn btn-primary mt-3'> View Vehicles </a>
+    
+
+</div>
+
+
+{% endblock  %}
